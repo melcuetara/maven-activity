@@ -2,12 +2,17 @@ package com.activity.vehicle;
 
 public class Vehicle {
     
-    private int wheelCount;
+    private String vehicleName = "";
+    private double gasConsumption;
+    private double gas;
     private double engine;
+    private int wheelCount;
     
-    public Vehicle(int wheelCount, double engine) {
-        this.wheelCount = wheelCount;
+    public Vehicle(double gasConsumption, double gas, double engine, int wheelCount) {
+        this.gasConsumption = gasConsumption;
+        this.gas = gas;
         this.engine = engine;
+        this.wheelCount = wheelCount;
     }
 
     public int getWheelCount() {
@@ -24,5 +29,29 @@ public class Vehicle {
 
     public void setEngine(double engine) {
         this.engine = engine;
+    }
+
+    public String getVehicleName() {
+        return vehicleName;
+    }
+
+    public void setVehicleName(String vehicleName) {
+        this.vehicleName = vehicleName;
+    }
+
+    public double getGasConsumption() {
+        return gasConsumption;
+    }
+
+    public void setGasConsumption(double gasConsumption) {
+        this.gasConsumption = gasConsumption;
+    }
+
+    public double getGas() {
+        return gas;
+    }
+
+    public void setGas(double gas) {
+        this.gas = gas;
     }
 }

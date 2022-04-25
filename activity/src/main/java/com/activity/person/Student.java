@@ -3,9 +3,9 @@ package com.activity.person;
 public class Student extends Person{
 
     private int year;
-
-    public Student(String firstName, String lastName, int age, int year) {
-        super(firstName, lastName, age);
+    
+    public Student(String firstName, String lastName, String location, int age, int year) {
+        super(firstName, lastName, location, age);
         this.year = year;
     }
 

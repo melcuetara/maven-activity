@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+activity,com.activity,App,450,0,16,0,81,0,17,0,9,0
+activity,com.activity.person,Student,17,0,0,0,6,0,3,0,3,0
+activity,com.activity.person,Person,57,0,0,0,24,0,12,0,12,0
+activity,com.activity.person,Teacher,17,0,0,0,6,0,3,0,3,0
+activity,com.activity.vehicle,Bike,17,0,0,0,6,0,3,0,3,0
+activity,com.activity.vehicle,Car,17,0,0,0,6,0,3,0,3,0
+activity,com.activity.vehicle,Vehicle,53,0,0,0,22,0,11,0,11,0

@@ -4,9 +4,10 @@ public class Bike extends Vehicle{
     
     private double wheeliePower;
 
-    public Bike(int wheelCount, double engine, double wheeliePower) {
-        super(wheelCount, engine);
+    public Bike(double gasConsumption, double gas, double engine, int wheelCount, double wheeliePower) {
+        super(gasConsumption, gas, engine, wheelCount);
         this.wheeliePower = wheeliePower;
+
     }
 
     public double getWheeliePower() {

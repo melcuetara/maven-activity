@@ -4,10 +4,11 @@ public class Car extends Vehicle{
     
     private double storageCapacity;
 
-    public Car(int wheelCount, double engine, double storageCapacity) {
-        super(wheelCount, engine);
+    public Car(double gasConsumption, double gas, double engine, int wheelCount, double storageCapacity) {
+        super(gasConsumption, gas, engine, wheelCount);
         this.storageCapacity = storageCapacity;
     }
+
 
     public double getStorageCapacity() {
         return storageCapacity;

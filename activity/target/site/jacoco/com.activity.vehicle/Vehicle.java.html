@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Vehicle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">activity</a> &gt; <a href="index.source.html" class="el_package">com.activity.vehicle</a> &gt; <span class="el_source">Vehicle.java</span></div><h1>Vehicle.java</h1><pre class="source lang-java linenums">package com.activity.vehicle;
+
+public class Vehicle {
+    
+<span class="nc" id="L5">    private String vehicleName = &quot;&quot;;</span>
+    private double gasConsumption;
+    private double gas;
+    private double engine;
+    private int wheelCount;
+    
+<span class="nc" id="L11">    public Vehicle(double gasConsumption, double gas, double engine, int wheelCount) {</span>
+<span class="nc" id="L12">        this.gasConsumption = gasConsumption;</span>
+<span class="nc" id="L13">        this.gas = gas;</span>
+<span class="nc" id="L14">        this.engine = engine;</span>
+<span class="nc" id="L15">        this.wheelCount = wheelCount;</span>
+<span class="nc" id="L16">    }</span>
+
+    public int getWheelCount() {
+<span class="nc" id="L19">        return wheelCount;</span>
+    }
+
+    public void setWheelCount(int wheelCount) {
+<span class="nc" id="L23">        this.wheelCount = wheelCount;</span>
+<span class="nc" id="L24">    }</span>
+
+    public double getEngine() {
+<span class="nc" id="L27">        return engine;</span>
+    }
+
+    public void setEngine(double engine) {
+<span class="nc" id="L31">        this.engine = engine;</span>
+<span class="nc" id="L32">    }</span>
+
+    public String getVehicleName() {
+<span class="nc" id="L35">        return vehicleName;</span>
+    }
+
+    public void setVehicleName(String vehicleName) {
+<span class="nc" id="L39">        this.vehicleName = vehicleName;</span>
+<span class="nc" id="L40">    }</span>
+
+    public double getGasConsumption() {
+<span class="nc" id="L43">        return gasConsumption;</span>
+    }
+
+    public void setGasConsumption(double gasConsumption) {
+<span class="nc" id="L47">        this.gasConsumption = gasConsumption;</span>
+<span class="nc" id="L48">    }</span>
+
+    public double getGas() {
+<span class="nc" id="L51">        return gas;</span>
+    }
+
+    public void setGas(double gas) {
+<span class="nc" id="L55">        this.gas = gas;</span>
+<span class="nc" id="L56">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

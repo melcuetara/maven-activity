@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>App.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">activity</a> &gt; <a href="index.source.html" class="el_package">com.activity</a> &gt; <span class="el_source">App.java</span></div><h1>App.java</h1><pre class="source lang-java linenums">package com.activity;
+
+import java.util.Scanner;
+
+import com.activity.person.*;
+import com.activity.vehicle.*;
+/**
+ * Hello world!
+ */
+public final class App {
+    private App() {
+    }
+
+    /**
+     * Says hello to the world.
+     * @param args The arguments of the program.
+     */
+<span class="nc" id="L18">    static Scanner input = new Scanner(System.in);</span>
+<span class="nc" id="L19">    static Vehicle vehicle = new Vehicle(7.8, 60, 800, 4);</span>
+<span class="nc" id="L20">    static Vehicle[] vehicles = new Vehicle[2];</span>
+<span class="nc" id="L21">    static Person person = new Person(&quot;Mel Allen&quot;, &quot;Cuetara&quot;, &quot;Gorordo Avenue&quot;, 22);</span>
+    public static void main(String[] args) {
+
+<span class="nc" id="L24">        Scanner input = new Scanner(System.in);</span>
+        
+<span class="nc" id="L26">        Student student = new Student(&quot;Christian&quot;, &quot;Jake&quot;, &quot;Lapu-Lapu City&quot;, 23, 4);</span>
+<span class="nc" id="L27">        Teacher teacher = new Teacher(&quot;Francis&quot;, &quot;Andrie&quot;, &quot;Cebu City&quot;, 40, &quot;Master's Degree&quot;);</span>
+<span class="nc" id="L28">        Car car = new Car(7.8, 60, 800, 4, 50);</span>
+<span class="nc" id="L29">        Bike bike = new Bike(5.0, 30, 155, 2, 20);</span>
+<span class="nc" id="L30">        int menu = 0;</span>
+
+<span class="nc bnc" id="L32" title="All 2 branches missed.">        for (int i = 0; i &lt; vehicles.length; i++) {</span>
+<span class="nc" id="L33">            vehicles[i] = new Vehicle(7.8, 60, 800, 4);</span>
+<span class="nc bnc" id="L34" title="All 2 branches missed.">            if (i == 0) {</span>
+<span class="nc" id="L35">                vehicles[i].setVehicleName(&quot;Rolls&quot;);</span>
+            }
+        }
+<span class="nc" id="L38">        System.out.println(vehicles[0].getVehicleName());</span>
+<span class="nc" id="L39">        printStudent(student);</span>
+<span class="nc" id="L40">        printTeacher(teacher);</span>
+<span class="nc" id="L41">        printCar(car);</span>
+<span class="nc" id="L42">        printBike(bike);</span>
+        
+        do {
+<span class="nc" id="L45">            System.out.println(&quot;MENU ===============&quot;);</span>
+<span class="nc" id="L46">            System.out.println(&quot;|1| Travel&quot;);</span>
+<span class="nc" id="L47">            System.out.println(&quot;|0| Exit&quot;);</span>
+<span class="nc" id="L48">            System.out.print(&quot;Choose: &quot;);</span>
+<span class="nc" id="L49">            menu = input.nextInt();</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">            if (menu == 1) {</span>
+<span class="nc" id="L51">                input.nextLine();</span>
+<span class="nc" id="L52">                System.out.print(&quot;Enter Vechicle Name: &quot;);</span>
+<span class="nc" id="L53">                String vehicleName = input.nextLine();</span>
+                int vehicleIndex;
+<span class="nc bnc" id="L55" title="All 2 branches missed.">                for (int i = 0; i &lt; vehicles.length; i++) {</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">                    if (vehicleName.equals(vehicles[i].getVehicleName())) {</span>
+<span class="nc" id="L57">                        System.out.println(&quot;Vehicle Found!&quot;);</span>
+<span class="nc" id="L58">                        vehicleIndex = i;</span>
+<span class="nc" id="L59">                    } else {</span>
+<span class="nc" id="L60">                        System.out.println(&quot;Vehicle not Found!&quot;);</span>
+                    }
+                }
+<span class="nc" id="L63">                travel(vehicleName);</span>
+            }
+<span class="nc bnc" id="L65" title="All 2 branches missed.">        } while (menu != 0);</span>
+<span class="nc" id="L66">        input.close();</span>
+<span class="nc" id="L67">    }</span>
+
+    public static void travel(String vehicleName) {
+        String location;
+        Double distance; 
+<span class="nc" id="L72">        System.out.print(&quot;Enter location: &quot;);</span>
+<span class="nc" id="L73">        location = input.nextLine();</span>
+<span class="nc" id="L74">        System.out.print(&quot;Enter distance (Km): &quot;);</span>
+<span class="nc" id="L75">        distance = input.nextDouble();</span>
+<span class="nc bnc" id="L76" title="All 2 branches missed.">        if(isGasSufficient(vehicle.getGas(), distance)) {</span>
+<span class="nc" id="L77">            vehicle.setVehicleName(vehicleName);</span>
+<span class="nc" id="L78">            vehicle.setGas(vehicle.getGas() - computeGasUsed(vehicle.getGasConsumption(), distance));</span>
+<span class="nc" id="L79">            person.setLocation(location);</span>
+<span class="nc" id="L80">            System.out.println(&quot;Vehicle used: &quot; + vehicle.getVehicleName());</span>
+<span class="nc" id="L81">            System.out.println(person.getFirstName() + &quot; &quot; + person.getLastName() + &quot; new location: &quot; + person.getLocation());</span>
+<span class="nc" id="L82">            System.out.println(&quot;Gas consumed: &quot; + String.format(&quot;%.2f&quot;, computeGasUsed(vehicle.getGasConsumption(), distance)));</span>
+<span class="nc" id="L83">            System.out.println(&quot;New gas: &quot; + String.format(&quot;%.2f&quot;, vehicle.getGas()));</span>
+<span class="nc" id="L84">        } else {</span>
+<span class="nc" id="L85">            System.out.println(&quot;Gas is Insufficient!&quot;);</span>
+        }
+<span class="nc" id="L87">    }</span>
+
+    public static double computeGasUsed(double gasConsumption, double distance) {
+<span class="nc" id="L90">        return distance / gasConsumption;</span>
+    }
+
+    public static boolean isGasSufficient(double gas, double distance) {
+<span class="nc bnc" id="L94" title="All 2 branches missed.">        if (gas &lt; computeGasUsed(vehicle.getGasConsumption(), distance)) {</span>
+<span class="nc" id="L95">            return false;</span>
+        }
+<span class="nc" id="L97">        return true;</span>
+    }
+
+    public static void printStudent(Student student) {
+<span class="nc" id="L101">        System.out.println(&quot;Person ==============================&quot;);</span>
+<span class="nc" id="L102">        System.out.println(&quot;Name: &quot; + student.getLastName() + &quot;, &quot; + student.getFirstName());</span>
+<span class="nc" id="L103">        System.out.println(&quot;Age: &quot; + student.getAge());</span>
+<span class="nc" id="L104">        System.out.println(&quot;Year Level: &quot; + student.getYear());</span>
+<span class="nc" id="L105">        System.out.println();</span>
+<span class="nc" id="L106">    }</span>
+    public static void printTeacher(Teacher teacher) {
+<span class="nc" id="L108">        System.out.println(&quot;Teacher ==============================&quot;);</span>
+<span class="nc" id="L109">        System.out.println(&quot;Name: &quot; + teacher.getLastName() + &quot;, &quot; + teacher.getFirstName());</span>
+<span class="nc" id="L110">        System.out.println(&quot;Age: &quot; + teacher.getAge());</span>
+<span class="nc" id="L111">        System.out.println(&quot;Degree Level: &quot; + teacher.getDegreeLevel());</span>
+<span class="nc" id="L112">        System.out.println();</span>
+<span class="nc" id="L113">    }</span>
+    public static void printCar(Car car) {
+<span class="nc" id="L115">        System.out.println(&quot;Car ==============================&quot;);</span>
+<span class="nc" id="L116">        System.out.println(&quot;No of Wheels: &quot; + car.getWheelCount());</span>
+<span class="nc" id="L117">        System.out.println(&quot;Engine Power: &quot; + car.getEngine() + &quot;CC&quot;);</span>
+<span class="nc" id="L118">        System.out.println(&quot;Storage Capacity: &quot; + car.getStorageCapacity() + &quot;Kg&quot;);</span>
+<span class="nc" id="L119">        System.out.println();</span>
+<span class="nc" id="L120">    }</span>
+    public static void printBike(Bike bike) {
+<span class="nc" id="L122">        System.out.println(&quot;Bike ==============================&quot;);</span>
+<span class="nc" id="L123">        System.out.println(&quot;No of Wheels: &quot; + bike.getWheelCount());</span>
+<span class="nc" id="L124">        System.out.println(&quot;Engine Power: &quot; + bike.getEngine() + &quot;CC&quot;);</span>
+<span class="nc" id="L125">        System.out.println(&quot;Wheelie Power: &quot; + bike.getWheeliePower() + &quot;CC&quot;);</span>
+<span class="nc" id="L126">        System.out.println();</span>
+<span class="nc" id="L127">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
